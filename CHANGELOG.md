@@ -2,6 +2,11 @@
 
 All notable changes to Menubot are recorded here.
 
+## 1.10 - 2026-06-14
+
+- Updated the GitHub release updater to bypass its cached GitHub response during forced WordPress update checks.
+- Improved update visibility immediately after publishing a new GitHub release.
+
 ## 1.9 - 2026-06-14
 
 - Added a generated root `menubot.zip` for direct WordPress plugin upload.

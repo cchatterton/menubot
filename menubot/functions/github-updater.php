@@ -102,6 +102,11 @@ final class Menubot_GitHub_Updater {
     }
 
     private static function get_latest_release() {
+        if (self::is_forced_update_check()) {
+            delete_site_transient(self::RELEASE_TRANSIENT);
+            delete_site_transient(self::FAILED_TRANSIENT);
+        }
+
         $release = get_site_transient(self::RELEASE_TRANSIENT);
         if (is_array($release)) {
             return $release;
@@ -137,6 +142,12 @@ final class Menubot_GitHub_Updater {
         delete_site_transient(self::FAILED_TRANSIENT);
 
         return $release;
+    }
+
+    private static function is_forced_update_check() {
+        $force_check = isset($_GET['force-check']) ? sanitize_text_field(wp_unslash($_GET['force-check'])) : '';
+
+        return '1' === $force_check;
     }
 
     private static function release_version($release) {
