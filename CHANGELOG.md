@@ -2,6 +2,11 @@
 
 All notable changes to Menubot are recorded here.
 
+## 1.9 - 2026-06-14
+
+- Added a generated root `menubot.zip` for direct WordPress plugin upload.
+- Updated the release build script to publish the same ZIP to `dist/` and the repository root.
+
 ## 1.8 - 2026-06-14
 
 - Added GitHub release update support for WordPress plugin updates.
